@@ -1,3 +1,8 @@
+import MessageList from "./MessageList"
+import PostForm from "./PostForm"
+
 export const Chats = () => {
-    return (<div>chats</div>)
+    return (<div>
+        <PostForm />
+        <MessageList /></div>)
 }
