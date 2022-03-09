@@ -2,13 +2,21 @@ import React from 'react';
 import logo from './logo.svg';
 import { Counter } from './features/counter/Counter';
 import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import { Chats } from './features/chats';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
+
+        <Routes>
+          <Route index element={<div></div>} />
+          <Route path="/counter" element={<Counter />} />
+          <Route path="/chats" element={<Chats />} />
+        </Routes>
+
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
