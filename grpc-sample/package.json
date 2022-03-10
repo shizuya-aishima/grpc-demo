@@ -2,6 +2,7 @@
   "name": "grpc-sample",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://envoy:8080",
   "dependencies": {
     "@improbable-eng/grpc-web": "^0.15.0",
     "@reduxjs/toolkit": "^1.8.0",
@@ -29,10 +30,7 @@
     "mock": "node mock/mock.js"
   },
   "eslintConfig": {
-    "extends": "react-app",
-    "ignorePatterns": [
-      "**/*_pb.js"
-    ]
+    "extends": "react-app"
   },
   "browserslist": {
     "production": [
