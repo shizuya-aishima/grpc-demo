@@ -1,8 +1,8 @@
-import { AppThunk } from 'app/store'
-import { messageServiceClient } from 'features/apis/messageService'
 import { Empty } from 'google-protobuf/google/protobuf/empty_pb'
-import { Message } from 'proto/MessageService_pb'
-import { ResponseStream } from 'proto/MessageService_pb_service'
+import { AppThunk } from '../../app/store'
+import { Message } from '../../proto/MessageService_pb'
+import { ResponseStream } from '../../proto/MessageService_pb_service'
+import { messageServiceClient } from '../apis/messageService'
 import { chatActions } from './reducer'
 
 let sampleCancel: ResponseStream<Message>

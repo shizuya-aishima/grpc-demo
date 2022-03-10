@@ -1,9 +1,10 @@
 import React from 'react'
-import logo from './logo.svg'
-import { Counter } from './features/counter/Counter'
-import './App.css'
 import { Route, Routes } from 'react-router-dom'
+import './App.css'
 import { Chats } from './features/chats'
+import { Counter } from './features/counter/Counter'
+import { Home } from './features/home'
+import logo from './logo.svg'
 
 const App = () => {
   return (
@@ -12,7 +13,7 @@ const App = () => {
         <img src={logo} className='App-logo' alt='logo' />
 
         <Routes>
-          <Route index element={<div></div>} />
+          <Route index element={<Home />} />
           <Route path='/counter' element={<Counter />} />
           <Route path='/chats' element={<Chats />} />
         </Routes>

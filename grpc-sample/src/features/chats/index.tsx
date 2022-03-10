@@ -1,5 +1,5 @@
-import MessageList from './MessageList'
-import PostForm from './PostForm'
+import MessageList from './messageList'
+import PostForm from './postForm'
 
 export const Chats = () => {
   return (

@@ -1,7 +1,7 @@
-import { useAppDispatch, useAppSelector } from 'app/hooks'
-import { getInit } from 'features/chats/operations'
 import React, { useEffect } from 'react'
-import Message from './Message'
+import { useAppDispatch, useAppSelector } from '../../../app/hooks'
+import Message from '../../../components/message'
+import { getInit } from '../operations'
 
 const MessageList: React.FC = () => {
   const dispatch = useAppDispatch()

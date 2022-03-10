@@ -1,6 +1,6 @@
-import { useAppDispatch, useAppSelector } from 'app/hooks'
-import { postMessage, setMessage } from 'features/chats/operations'
 import React, { FormEvent } from 'react'
+import { useAppDispatch, useAppSelector } from '../../../app/hooks'
+import { postMessage, setMessage } from '../operations'
 
 const PostForm: React.FC = () => {
   const dispatch = useAppDispatch()
