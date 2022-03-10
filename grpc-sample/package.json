@@ -25,7 +25,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "mock": "node mock/mock.js"
   },
   "eslintConfig": {
     "extends": "react-app",
@@ -46,6 +47,8 @@
     ]
   },
   "devDependencies": {
-    "@types/google-protobuf": "^3.15.5"
+    "@grpc/proto-loader": "^0.6.9",
+    "@types/google-protobuf": "^3.15.5",
+    "grpc": "^1.24.11"
   }
 }
