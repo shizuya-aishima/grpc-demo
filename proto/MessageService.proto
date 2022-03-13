@@ -5,6 +5,8 @@ import "google/protobuf/empty.proto";
 service MessageService {
   rpc GetMessageStream(google.protobuf.Empty) returns (stream Message);
   rpc PostMessage(Message) returns (PostMessageResponse);
+  rpc CreateRoom(Room) returns (Room);
+  rpc GetRoomStream(google.protobuf.Empty) returns (Room);
 }
 
 message PostMessageResponse {
@@ -15,4 +17,9 @@ message Message {
   string text = 1; // 発言内容
   int64 create_time = 2; // 発言日時
   string author_name = 3; // 投稿者名
+}
+
+message Room {
+  string room_id = 1; // UUID のID
+  string room_name = 2; // 部屋名
 }

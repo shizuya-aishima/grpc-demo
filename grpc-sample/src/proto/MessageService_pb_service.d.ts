@@ -23,10 +23,30 @@ type MessageServicePostMessage = {
   readonly responseType: typeof MessageService_pb.PostMessageResponse;
 };
 
+type MessageServiceCreateRoom = {
+  readonly methodName: string;
+  readonly service: typeof MessageService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof MessageService_pb.Room;
+  readonly responseType: typeof MessageService_pb.Room;
+};
+
+type MessageServiceGetRoomStream = {
+  readonly methodName: string;
+  readonly service: typeof MessageService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof google_protobuf_empty_pb.Empty;
+  readonly responseType: typeof MessageService_pb.Room;
+};
+
 export class MessageService {
   static readonly serviceName: string;
   static readonly GetMessageStream: MessageServiceGetMessageStream;
   static readonly PostMessage: MessageServicePostMessage;
+  static readonly CreateRoom: MessageServiceCreateRoom;
+  static readonly GetRoomStream: MessageServiceGetRoomStream;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -70,6 +90,24 @@ export class MessageServiceClient {
   postMessage(
     requestMessage: MessageService_pb.Message,
     callback: (error: ServiceError|null, responseMessage: MessageService_pb.PostMessageResponse|null) => void
+  ): UnaryResponse;
+  createRoom(
+    requestMessage: MessageService_pb.Room,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: MessageService_pb.Room|null) => void
+  ): UnaryResponse;
+  createRoom(
+    requestMessage: MessageService_pb.Room,
+    callback: (error: ServiceError|null, responseMessage: MessageService_pb.Room|null) => void
+  ): UnaryResponse;
+  getRoomStream(
+    requestMessage: google_protobuf_empty_pb.Empty,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: MessageService_pb.Room|null) => void
+  ): UnaryResponse;
+  getRoomStream(
+    requestMessage: google_protobuf_empty_pb.Empty,
+    callback: (error: ServiceError|null, responseMessage: MessageService_pb.Room|null) => void
   ): UnaryResponse;
 }
 

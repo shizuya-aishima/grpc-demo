@@ -16,11 +16,8 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": [
-    "react",
-    "@typescript-eslint"
-  ],
-  "ignorePatterns": ["src/**/*.spec.ts", "**/*_pb.js"],
+  "plugins": ["react", "@typescript-eslint"],
+  "ignorePatterns": ["src/**/*.spec.ts", "**/*.js"],
   "rules": {
     "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",
@@ -30,9 +27,7 @@
     "no-mixed-spaces-and-tabs": "off",
     "no-unexpected-multiline": "off",
     "no-use-before-define": "off",
-    "@typescript-eslint/no-use-before-define": [
-      "error"
-    ],
+    "@typescript-eslint/no-use-before-define": ["error"],
     "@typescript-eslint/no-unused-vars": [
       "error",
       {
